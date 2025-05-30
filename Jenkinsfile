@@ -1,8 +1,6 @@
 pipeline {
-    agent {
-        
-        any
-    }
+    agent any
+    
     environment {
         REPO_URL = 'https://github.com/thiagarajan-hackathon/hello-world-dockerfile.git' // Replace with your repository URL
         IMAGE_NAME = 'Hackathon-image' // Replace with your desired Docker image name
