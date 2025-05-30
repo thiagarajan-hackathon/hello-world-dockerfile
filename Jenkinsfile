@@ -1,7 +1,8 @@
 pipeline {
     agent {
+        
         label 'Worker1' 
-
+    }
     environment {
         REPO_URL = 'https://github.com/thiagarajan-hackathon/hello-world-dockerfile.git' // Replace with your repository URL
         IMAGE_NAME = 'Hackathon-image' // Replace with your desired Docker image name
@@ -20,6 +21,16 @@ pipeline {
                 echo 'Building the Docker image...'
                 script {
                     sh "sudo docker build -t ${IMAGE_NAME} ."
+        stage('Build') {
+            steps {
+                script {
+                    // Shell script execution
+                    sh '''
+                        echo "Starting the deploy process..."
+                        kubectl run hello-world --image=${IMAGE_NAME}
+                        echo "Deploy process completed!"
+                    '''
+                }            
                 }
             }
         }
@@ -33,4 +44,4 @@ pipeline {
             echo 'Pipeline failed. Please check the logs.'
         }
     }
-}}
+}
