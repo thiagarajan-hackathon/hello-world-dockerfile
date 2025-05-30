@@ -10,7 +10,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo 'Cloning the repository...'
-                git branch: 'main', url: "${REPO_URL}" // Replace 'main' with your branch name if different
+                git branch: 'master', url: "${REPO_URL}" // Replace 'main' with your branch name if different
             }
         }
 
