@@ -1,7 +1,7 @@
 pipeline {
     agent {
         
-        nodeName: 'Worker1' 
+        any
     }
     environment {
         REPO_URL = 'https://github.com/thiagarajan-hackathon/hello-world-dockerfile.git' // Replace with your repository URL
