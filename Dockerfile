@@ -8,7 +8,7 @@ WORKDIR /app
 
 # Copy the Python script into the container
 COPY hello.py .
-COPY bad_code.py
+COPY bad_code.py .
 
 # Run the script
 CMD ["python", "hello.py"]
